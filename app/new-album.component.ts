@@ -16,13 +16,13 @@ import {Album} from './album.model';
    `
 })
 export class NewAlbumComponent {
-  public onSubmitNewAlbum: EventEmitter<Album>;
+  public onSubmitNewAlbum: EventEmitter<string[]>;
   constructor(){
     this.onSubmitNewAlbum = new EventEmitter();
   }
   addAlbum(albumName: HTMLInputElement, albumArtist: HTMLInputElement, albumPrice: HTMLInputElement, albumGenre: HTMLInputElement) {
-    var newAlbum = new Album(albumName.value, albumArtist.value, parseFloat(albumPrice.value), albumGenre.value);
-    this.onSubmitNewAlbum.emit(newAlbum);
+    var model: string[] = [albumName.value, albumArtist.value, albumPrice.value, albumGenre.value];
+    this.onSubmitNewAlbum.emit(model);
     albumName.value = "";
     albumArtist.value = "";
     albumPrice.value = "";
