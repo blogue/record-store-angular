@@ -1,6 +1,7 @@
 import { Component, EventEmitter } from 'angular2/core';
 import {AlbumListComponent} from './album-list.component';
 import { Album } from './album.model';
+import { CartComponent } from './cart.component';
 
 
 @Component({
@@ -13,6 +14,7 @@ import { Album } from './album.model';
         [albumList]="albums"
         (onAlbumSelect)="albumWasSelected($event)">
       </album-list>
+      <cart-display></cart-display>
     </div>
   `
 })

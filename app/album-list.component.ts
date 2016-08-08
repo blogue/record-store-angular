@@ -3,12 +3,13 @@ import {AlbumComponent} from './album.component';
 import {Album} from './album.model';
 import { NewAlbumComponent } from './new-album.component';
 import { FilterPipe } from './filter.pipe';
+import { CartPipe } from './cart.pipe'
 
 @Component({
   selector: 'album-list',
   inputs: ['albumList'],
   outputs: ['onAlbumSelect'],
-  pipes: [FilterPipe],
+  pipes: [FilterPipe, CartPipe],
   directives: [AlbumComponent, NewAlbumComponent],
   template: `
   <div>
